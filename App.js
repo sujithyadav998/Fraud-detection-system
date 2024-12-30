@@ -1,6 +1,11 @@
 import React from 'react';
-import AppNavigation from './navigation/appNavigation'; // Ensure the path is correct
+import { AuthProvider } from './hooks/useAuth';
+import AppNavigation from './navigation/appNavigation';
 
 export default function App() {
-  return <AppNavigation />;
+  return (
+    <AuthProvider>
+      <AppNavigation />
+    </AuthProvider>
+  );
 }
